@@ -37,4 +37,41 @@ describe("tests function numToRoman", () => {
     test("that 10 is X in Roman Numerals", () => {
         expect(numToRoman(10)).toBe("X");
     });
+    test("that 40 is XL in Roman Numerals", () => {
+        expect(numToRoman(40)).toBe("XL");
+    });
+    test("that 50 is L in Roman Numerals", () => {
+        expect(numToRoman(50)).toBe("L");
+    });
+    test("that 99 is XCIX in Roman Numerals", () => {
+        expect(numToRoman(99)).toBe("XCIX");
+    });
+    test("that 100 is C in Roman Numerals", () => {
+        expect(numToRoman(100)).toBe("C");
+    });
+    test("that 500 is D in Roman Numerals", () => {
+        expect(numToRoman(500)).toBe("D");
+    });
+    test("that 400 is CD in Roman Numerals", () => {
+        expect(numToRoman(400)).toBe("CD");
+    });
+    test("that 1000 is M in Roman Numerals", () => {
+        expect(numToRoman(1000)).toBe("M");
+    });
+    test("that 2022 is MMXXII in Roman Numerals", () => {
+        expect(numToRoman(2022)).toBe("MMXXII");
+    });
+
+// describe block to inform users that Romans did not have a number for zero, or negative values, or above 3999
+describe("test that numbers below 1 and above 3999 cannot be converted", () => {
+    test("should not convert 0", () => {
+        expect(numToRoman(0)).toEqual("The Romans had no representation for 0 and below");
+    });
+    test("should not convert negative numbers", () => {
+        expect(numToRoman(-10)).toEqual("The Romans had no representation for 0 and below");
+    });
+    test("should not convert 4000 and above", () => {
+        expect(numToRoman(4001)).toEqual("The Romans had no representation for values above 3999");
+    });
+});
 })
